@@ -1,0 +1,13 @@
+@import "../../styles/variables.scss";
+
+.index {
+  padding: $spacing-md;
+  
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: $primary-color;
+    text-align: center;
+    margin: $spacing-lg 0;
+  }
+} 

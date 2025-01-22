@@ -1,0 +1,34 @@
+@import "../../styles/variables.scss";
+
+.pet-card {
+  background: $white;
+  border-radius: 12px;
+  margin: $spacing-md;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  .pet-image {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .pet-info {
+    padding: $spacing-md;
+    
+    .pet-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: $text-primary;
+    }
+    
+    .pet-details {
+      margin-top: $spacing-xs;
+      font-size: 14px;
+      color: $text-secondary;
+      
+      text {
+        margin-right: $spacing-md;
+      }
+    }
+  }
+} 
