@@ -1,168 +1,115 @@
-# 宠物管理小程序 (Pet Management Mini Program)
+# 云开发 quickstart
 
-基于Taro + React的微信小程序，用于宠物信息管理、预约服务等功能。
+这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
+
+- 数据库：一个既可在小程序前端操作，也能在云函数中读写的 JSON 文档型数据库
+- 文件存储：在小程序前端直接上传/下载云端文件，在云开发控制台可视化管理
+- 云函数：在云端运行的代码，微信私有协议天然鉴权，开发者只需编写业务逻辑代码
+
+## 参考文档
+
+- [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
+
+# Pet 小程序
+
+## 项目介绍
+
+Pet 是一个基于 uni-app 开发的宠物服务平台小程序，主要功能包括:
+
+- 宠物领养
+- 闲置商城
+- 宠物社区
+- 宠物服务(托运、寄养、殡葬等)
 
 ## 技术栈
 
-- Taro 3.6.23
-- React 18
-- TypeScript
-- SCSS
+- 框架：uni-app
+- UI 组件：uView UI
+- 状态管理：Vuex
+- 地图服务：腾讯地图
 
-## 项目结构
+## 开始使用
 
-```bash
-pet-mp/
-├── config/ # 编译配置
-│ ├── index.js # 主配置文件
-│ └── dev.js # 开发环境配置
-├── src/
-│ ├── app.tsx # 小程序入口
-│ ├── app.config.ts # 全局配置
-│ ├── app.scss # 全局样式
-│ ├── assets/ # 静态资源
-│ │ └── images/ # 图片资源
-│ ├── components/ # 公共组件
-│ │ ├── PetCard/ # 宠物卡片组件
-│ │ └── NavBar/ # 自定义导航栏
-│ ├── pages/ # 页面目录
-│ │ ├── index/ # 首页
-│ │ ├── pet-list/ # 宠物列表
-│ │ ├── pet-detail/ # 宠物详情
-│ │ └── user-center/ # 个人中心
-│ ├── services/ # 接口服务
-│ │ └── api.ts # API请求封装
-│ └── styles/ # 全局样式
-│ └── variables.scss # SCSS变量
-├── .eslintrc.js # ESLint配置
-├── .gitignore # Git忽略文件
-├── project.config.json # 小程序项目配置
-├── tsconfig.json # TypeScript配置
-├── package.json # 项目依赖配置
-└── README.md # 项目说明文档
-```
+### 环境要求
 
-## 开发环境要求
-
-- Node.js >= 14
-- npm >= 6
+- Node.js 12.0+
+- HBuilderX 3.0+
 - 微信开发者工具
-- @tarojs/cli (全局安装)
 
-## 快速开始
+### 安装运行
 
-1. **安装全局依赖**
+1. 安装依赖
 
-```bash
-npm install -g @tarojs/cli
-```
-
-2. **安装项目依赖**
-```bash
-make install
-# 或
+bash
 npm install
-```
 
-3. **启动开发环境**
-```bash
-make dev
-# 或
-npm run dev:weapp
-```
+2. 运行项目
 
-4. **在微信开发者工具中导入项目**
-- 打开微信开发者工具
-- 选择"导入项目"
-- 选择项目根目录
-- 填入自己的小程序AppID
+方式一：HBuilderX
+- 使用 HBuilderX 打开项目
+- 点击工具栏的运行按钮，选择运行到对应平台
 
-## 可用命令
+方式二：命令行
 
-```bash
-# 安装依赖
-make install
+bash
+运行到微信小程序
+npm run dev:mp-weixin
+运行到 H5
+npm run dev:h5
 
-# 启动开发环境
-make dev
+### 项目配置
 
-# 构建生产环境
-make build
+1. 小程序配置
+- 修改 `manifest.json` 中的 appid
+- 配置微信开发者工具
 
-# 代码检查
-make lint
+2. 后端接口配置
 
-# 自动修复代码格式
-make lint-fix
+javascript
+// config/index.config.js
+const CONFIG = {
+development: {
+baseUrl: '你的开发环境接口地址'
+},
+production: {
+baseUrl: '你的生产环境接口地址'
+}
+}
 
-# 清理构建文件
-make clean
+## 目录结构
 
-# 更新依赖包
-make update
+├── api # 接口请求
+├── components # 公共组件
+├── config # 配置文件
+├── pages # 页面文件
+├── static # 静态资源
+├── store # Vuex 状态管理
+├── utils # 工具函数
+└── uview-ui # UI 组件库
 
-# 安装新的依赖
-make add pkg=包名
 
-# 安装开发依赖
-make add-dev pkg=包名
+## 主要功能
 
-# 创建新页面
-make new-page name=页面名
-```
+- 首页：轮播图、分类导航、推荐列表
+- 领养中心：宠物列表、详情、申请领养
+- 闲置商城：商品浏览、购物车、下单支付
+- 宠物服务：托运、寄养、殡葬等服务预约
+- 个人中心：个人信息、订单管理、收藏等
 
-## 开发规范
+## 开发注意事项
 
-- 使用TypeScript进行开发
-- 使用ESLint进行代码规范检查
-- 使用SCSS进行样式开发
-- 遵循组件化开发原则
-- 使用函数式组件和Hooks
+1. 遵循 uni-app 开发规范
+2. 使用 uView UI 组件库进行开发
+3. 保持代码风格统一
+4. 做好版本管理和代码备份
 
-## 目录说明
-
-- `config/`: 项目编译配置
-- `src/components/`: 可复用的组件
-- `src/pages/`: 页面文件
-- `src/services/`: API接口封装
-- `src/styles/`: 全局样式和变量
-
-## 注意事项
-
-1. 首次运行前需要：
-   - 安装依赖：`make install`
-   - 在 `project.config.json` 中配置自己的AppID
-   - 在微信开发者工具中开启"不校验合法域名"选项（如需要）
-
-2. 开发时注意：
-   - 遵循TypeScript类型定义
-   - 使用SCSS变量保持样式一致性
-   - 遵循组件化开发原则
-
-## 构建部署
-
-```bash
-# 构建生产环境版本
-make build
-```
-
-构建完成后，生成的文件在 `dist` 目录下，可直接用于小程序发布。
-
-## 版本历史
-
-- 0.1.0 (2024-03-14)
-  - 初始化项目
-  - 完成基础架构搭建
-  - 实现基础组件
-
-## 贡献指南
+## 参与贡献
 
 1. Fork 本仓库
-2. 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 提交 Pull Request
+2. 创建新的功能分支
+3. 提交代码
+4. 创建 Pull Request
 
-## 许可证
+## 版权信息
 
-[MIT License](LICENSE)
+Copyright © 2023 Pet
