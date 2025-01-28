@@ -189,7 +189,7 @@
 									maxlength="11"
 								/>
 							</view>
-							<view class="input-item input-item-sms-code">
+							<!-- <view class="input-item input-item-sms-code">
 								<text class="iconfont iconyanzhengma" :class="'text-' + themeColor.name"></text>
 								<view class="input-wrapper">
 									<view class="rf-input-wrapper">
@@ -212,7 +212,7 @@
 											}}</text>
 									</button>
 								</view>
-							</view>
+							</view> -->
 							<view class="input-item">
 								<text class="iconfont iconmimaffffffpx" :class="'text-' + themeColor.name"></text>
 								<input
@@ -519,43 +519,45 @@ export default {
 				this.$mHelper.toast('暂未开放注册，敬请期待～');
 				return;
 			}
-			this.reqBody['mobile'] = this.registerParams['mobile'];
-			this.reqBody['password'] = this.registerParams['password'];
-			this.reqBody['code'] = this.registerParams['code'];
-			this.reqBody['nickname'] = this.registerParams['nickname'];
-			const cheRes = this.$mGraceChecker.check(
-				this.reqBody,
-				this.$mFormRule.registerRule
-			);
-			if (!cheRes) {
-				this.$mHelper.toast(this.$mGraceChecker.error);
-				return;
-			}
+			
+			// 构建新的注册参数
+			const registerData = {
+				name: this.registerParams.nickname,
+				phone: this.registerParams.mobile,
+				password: this.registerParams.password,
+				username: this.registerParams.nickname,
+				email: `${this.registerParams.mobile}@example.com`, // 临时邮箱
+				address: "默认地址",  // 默认值
+				age: 18,  // 默认值
+				role: "pet_sitter",  // 默认角色
+				description: "新用户",  // 默认描述
+				rating: 5.0,  // 默认评分
+				status: "active"  // 默认状态
+			};
+
+			// 验证密码确认
 			if (
-				this.registerParams['password'] !==
-				this.registerParams['password_repetition']
+				this.registerParams.password !==
+				this.registerParams.password_repetition
 			) {
 				this.$mHelper.toast('两次输入的密码不一致');
 				return;
 			}
-			this.reqBody['password_repetition'] = this.registerParams[
-				'password_repetition'
-				];
-			this.reqBody['promo_code'] = this.registerParams['promoCode'];
+
 			this.btnLoading = true;
-			this.reqBody.group = this.$mHelper.platformGroupFilter();
-			await this.$http
-				.post(registerByPass, this.reqBody)
-				.then(() => {
-					this.btnLoading = false;
-					this.$mHelper.toast('恭喜您注册成功');
-					uni.setStorageSync('loginMobile', this.reqBody['mobile']);
-					uni.setStorageSync('loginPassword', this.reqBody['password']);
-					this.$mRouter.push({ route: '/pages/public/login' });
-				})
-				.catch(() => {
-					this.btnLoading = false;
-				});
+			
+			try {
+				debugger;
+				const response = await this.$http.post('http://localhost:8081/api/v1/users/register', registerData);
+				this.btnLoading = false;
+				this.$mHelper.toast('恭喜您注册成功');
+				uni.setStorageSync('loginMobile', this.registerParams.mobile);
+				uni.setStorageSync('loginPassword', this.registerParams.password);
+				this.$mRouter.push({ route: '/pages/public/login' });
+			} catch (error) {
+				this.btnLoading = false;
+				this.$mHelper.toast('注册失败：' + (error.message || '未知错误'));
+			}
 		}
 	}
 };

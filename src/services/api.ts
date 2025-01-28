@@ -2,6 +2,16 @@ import Taro from '@tarojs/taro'
 
 const BASE_URL = 'https://your-api-domain.com/api'
 
+export const API_BASE_URL = 'http://localhost:8081/api/v1';
+
+export const API = {
+  // 用户相关接口
+  USER: {
+    REGISTER: `${API_BASE_URL}/users/register`,
+    LOGIN: `${API_BASE_URL}/users/login`,
+  }
+};
+
 export const request = <T = any>(options: Taro.request.Option): Promise<T> => {
   return new Promise((resolve, reject) => {
     Taro.request({

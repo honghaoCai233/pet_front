@@ -77,27 +77,26 @@ export default {
 	}],
 
 	/* 用户注册 */
-	registerRule: [{
-		name: 'mobile',
-		checkType: 'notnull',
-		checkRule: '',
-		errorMsg: '手机号不能为空'
-	}, {
-		name: 'mobile',
-		checkType: 'phoneno',
-		checkRule: '',
-		errorMsg: '手机号格式不正确'
-	}, {
-		name: 'code',
-		checkType: 'string',
-		checkRule: '4',
-		errorMsg: '请输入4位验证码'
-	}, {
-		name: 'password',
-		checkType: 'string',
-		checkRule: '6,18',
-		errorMsg: '请输入6-18位密码'
-	}],
+	registerRule: [
+		{
+			name: 'mobile',
+			checkType: 'phoneno',
+			checkRule: '',
+			errorMsg: '手机号格式不正确'
+		},
+		{
+			name: 'password',
+			checkType: 'string',
+			checkRule: '6,18',
+			errorMsg: '密码长度需要在6-18个字符之间'
+		},
+		{
+			name: 'nickname',
+			checkType: 'string',
+			checkRule: '2,12',
+			errorMsg: '昵称长度需要在2-12个字符之间'
+		}
+	],
 
 	/* 修改用户信息 */
 	updateUserInfoRule: [{

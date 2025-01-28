@@ -19,30 +19,30 @@
 						maxlength="11"
 					/>
 				</view>
-				<view class="input-item input-item-sms-code">
-					<view class="input-wrapper">
-						<view class="rf-input-wrapper">
-							<view class="tit">验证码</view>
-							<input
-								type="number"
-								v-model="registerParams.code"
-								placeholder="请输入验证码"
-								maxlength="4"
-								data-key="mobile"
-							/>
-						</view>
-						<button
-							class="sms-code-btn"
-							:disabled="smsCodeBtnDisabled"
-							@tap.stop="getSmsCode"
-						>
-							<text v-if="!smsCodeBtnDisabled">获取验证码</text>
-							<text v-else class="sms-code-resend">{{
-								`重新发送 (${codeSeconds})`
-							}}</text>
-						</button>
-					</view>
-				</view>
+<!--				<view class="input-item input-item-sms-code">-->
+<!--					<view class="input-wrapper">-->
+<!--						<view class="rf-input-wrapper">-->
+<!--							<view class="tit">验证码</view>-->
+<!--							<input-->
+<!--								type="number"-->
+<!--								v-model="registerParams.code"-->
+<!--								placeholder="请输入验证码"-->
+<!--								maxlength="4"-->
+<!--								data-key="mobile"-->
+<!--							/>-->
+<!--						</view>-->
+<!--						<button-->
+<!--							class="sms-code-btn"-->
+<!--							:disabled="smsCodeBtnDisabled"-->
+<!--							@tap.stop="getSmsCode"-->
+<!--						>-->
+<!--							<text v-if="!smsCodeBtnDisabled">获取验证码</text>-->
+<!--							<text v-else class="sms-code-resend">{{-->
+<!--								`重新发送 (${codeSeconds})`-->
+<!--							}}</text>-->
+<!--						</button>-->
+<!--					</view>-->
+<!--				</view>-->
 				<view class="input-item">
 					<text class="tit">密码</text>
 					<input
@@ -220,7 +220,6 @@ export default {
 			}
 			this.reqBody['mobile'] = this.registerParams['mobile'];
 			this.reqBody['password'] = this.registerParams['password'];
-			this.reqBody['code'] = this.registerParams['code'];
 			this.reqBody['nickname'] = this.registerParams['nickname'];
 			const cheRes = this.$mGraceChecker.check(
 				this.reqBody,
