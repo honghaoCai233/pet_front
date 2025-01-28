@@ -53,61 +53,61 @@
 		>
 			<image class="arc" :src="arc"></image>
 			<!--余额 优惠券 积分信息-->
-			<view class="promotion-center">
-				<list-cell
-					icon="iconqianbao"
-					:iconColor="themeColor.color"
-					@eventClick="navTo('/pages/user/account/account')"
-					title="我的账户"
-				></list-cell>
-				<view class="tj-sction">
-					<view
-						class="tj-item"
-						v-for="item in amountList"
-						:key="item.title"
-						@tap="navTo(item.url)"
-					>
-						<text class="num" :class="item.value > 0 ? 'text-'+themeColor.name : ''">
-							{{ item.value }}
-						</text>
-						<text>{{ item.title }}</text>
-					</view>
-				</view>
-			</view>
+<!--			<view class="promotion-center">-->
+<!--				<list-cell-->
+<!--					icon="iconqianbao"-->
+<!--					:iconColor="themeColor.color"-->
+<!--					@eventClick="navTo('/pages/user/account/account')"-->
+<!--					title="我的账户"-->
+<!--				></list-cell>-->
+<!--				<view class="tj-sction">-->
+<!--					<view-->
+<!--						class="tj-item"-->
+<!--						v-for="item in amountList"-->
+<!--						:key="item.title"-->
+<!--						@tap="navTo(item.url)"-->
+<!--					>-->
+<!--						<text class="num" :class="item.value > 0 ? 'text-'+themeColor.name : ''">-->
+<!--							{{ item.value }}-->
+<!--						</text>-->
+<!--						<text>{{ item.title }}</text>-->
+<!--					</view>-->
+<!--				</view>-->
+<!--			</view>-->
 		<!-- 我的订单 -->
-		<view class="promotion-center">
-			<list-cell
-				icon="iconicon1"
-				:iconColor="themeColor.color"
-				@eventClick="
-					navTo(`/pages/order/order?state=-1`)
-				"
-				title="全部买到订单"
-			></list-cell>
-			<view class="order-section">
-				<view
-					class="order-item"
-					v-for="item in orderSectionList"
-					:key="item.title"
-					@tap="navTo(item.url)"
-					hover-class="common-hover"
-					:hover-stay-time="50"
-				>
-					<i class="iconfont" :class="[item.icon, 'text-'+themeColor.name]" />
-					<text>{{ item.title }}</text>
-					<rf-badge
-						v-if="item.num > 0"
-						type="error"
-						size="small"
-						class="badge"
-						:text="item.num"
-					></rf-badge>
-				</view>
-			</view>
-		</view>
+<!--		<view class="promotion-center">-->
+<!--			<list-cell-->
+<!--				icon="iconicon1"-->
+<!--				:iconColor="themeColor.color"-->
+<!--				@eventClick="-->
+<!--					navTo(`/pages/order/order?state=-1`)-->
+<!--				"-->
+<!--				title="全部买到订单"-->
+<!--			></list-cell>-->
+<!--			<view class="order-section">-->
+<!--				<view-->
+<!--					class="order-item"-->
+<!--					v-for="item in orderSectionList"-->
+<!--					:key="item.title"-->
+<!--					@tap="navTo(item.url)"-->
+<!--					hover-class="common-hover"-->
+<!--					:hover-stay-time="50"-->
+<!--				>-->
+<!--					<i class="iconfont" :class="[item.icon, 'text-'+themeColor.name]" />-->
+<!--					<text>{{ item.title }}</text>-->
+<!--					<rf-badge-->
+<!--						v-if="item.num > 0"-->
+<!--						type="error"-->
+<!--						size="small"-->
+<!--						class="badge"-->
+<!--						:text="item.num"-->
+<!--					></rf-badge>-->
+<!--				</view>-->
+<!--			</view>-->
+<!--		</view>-->
 		
 		<!-- 我的订单 -->
-		<view class="promotion-center">
+		<!-- <view class="promotion-center">
 			<list-cell
 				icon="iconicon1"
 				:iconColor="themeColor.color"
@@ -136,7 +136,7 @@
 					></rf-badge>
 				</view>
 			</view>
-		</view>
+		</view> -->
 			<!--管理中心-->
 			<view class="promotion-center">
 				<list-cell
@@ -214,50 +214,50 @@
 			</view>
 			
 			<!--管理中心-->
-			<view class="promotion-center">
-				<list-cell
-					icon="iconfuwu"
-					navigateType=""
-					:iconColor="themeColor.color"
-					title="表单管理中心"
-				></list-cell>
-				<view class="tj-sction">
-					<!-- 分类列表 -->
-					<view class="category-list">
-						<view
-							class="category"
-							v-for="(item, index) in formsettingList"
-							:key="index"
-							:style="{display: settingItemShowFilter(item.title)}"
-							@tap.stop="navTo(item.url)"
-						>
-							<view v-if="item.title !== '分享'">
-								<view class="img">
-									<text
-										class="iconfont"
-										:class="[item.icon, 'text-'+themeColor.name]"
-									></text>
-								</view>
-								<view class="text">{{ item.title }}</view>
-							</view>
-							<button
-								class="share-btn"
-								open-type="share"
-								@tap="share"
-								v-else
-							>
-								<view class="img">
-									<text
-										class="iconfont"
-										:class="[item.icon, 'text-'+themeColor.name]"
-									></text>
-								</view>
-								<view class="text">{{ item.title }}</view>
-							</button>
-						</view>
-					</view>
-				</view>
-			</view>
+<!--			<view class="promotion-center">-->
+<!--				<list-cell-->
+<!--					icon="iconfuwu"-->
+<!--					navigateType=""-->
+<!--					:iconColor="themeColor.color"-->
+<!--					title="表单管理中心"-->
+<!--				></list-cell>-->
+<!--				<view class="tj-sction">-->
+<!--					&lt;!&ndash; 分类列表 &ndash;&gt;-->
+<!--					<view class="category-list">-->
+<!--						<view-->
+<!--							class="category"-->
+<!--							v-for="(item, index) in formsettingList"-->
+<!--							:key="index"-->
+<!--							:style="{display: settingItemShowFilter(item.title)}"-->
+<!--							@tap.stop="navTo(item.url)"-->
+<!--						>-->
+<!--							<view v-if="item.title !== '分享'">-->
+<!--								<view class="img">-->
+<!--									<text-->
+<!--										class="iconfont"-->
+<!--										:class="[item.icon, 'text-'+themeColor.name]"-->
+<!--									></text>-->
+<!--								</view>-->
+<!--								<view class="text">{{ item.title }}</view>-->
+<!--							</view>-->
+<!--							<button-->
+<!--								class="share-btn"-->
+<!--								open-type="share"-->
+<!--								@tap="share"-->
+<!--								v-else-->
+<!--							>-->
+<!--								<view class="img">-->
+<!--									<text-->
+<!--										class="iconfont"-->
+<!--										:class="[item.icon, 'text-'+themeColor.name]"-->
+<!--									></text>-->
+<!--								</view>-->
+<!--								<view class="text">{{ item.title }}</view>-->
+<!--							</button>-->
+<!--						</view>-->
+<!--					</view>-->
+<!--				</view>-->
+<!--			</view>-->
 		</view>
 		<!--页面加载动画-->
 		<rfLoading isFullScreen :active="loading"></rfLoading>

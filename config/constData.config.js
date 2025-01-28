@@ -1,6 +1,6 @@
 export default {
 	// app应用名称
-	appName: '永爱宠物领养送养中心',
+	appName: 'PetApp',
 
 	// 购物车在tab的位置
 	cartIndex: 3,
@@ -60,7 +60,8 @@ export default {
 
 	// 个人中心-设置中心菜单 e07472 ff4757 ff6b81
 	settingList: [
-		{ icon: 'iconxiaoxi1', url: '/pages/pet/my-notify', title: '我的消息', color: '#ff6b81' },
+		{ icon: 'iconremen1', url: '/pages/pet/my-jiyangform', title: '宠物寄养表单', color: '#ff6b81' },
+		// { icon: 'iconxiaoxi1', url: '/pages/pet/my-notify', title: '我的消息', color: '#ff6b81' },
 		{ icon: 'iconshouye', url: '/pages/pet/my-pet', title: '我的送养', color: '#ff6b81' },
 		{ icon: 'iconremen1', url: '/pages/pet/my-apply', title: '我的申请', color: '#ff6b81' },
 		
@@ -69,7 +70,7 @@ export default {
 		//{ icon: 'icongonggao', url: '/pages/index/notice/notice', title: '商城公告', color: '#ff6b81' },
 		//{ icon: 'iconyouhuiquan-copy', url: '/pages/user/coupon/list', title: '领券中心', color: '#ff6b81' },
 		
-		{ icon: 'iconjifenshangcheng', url: '/pages/pet/my-fabu', title: '我的发布产品', color: '#ff6b81'},
+		// { icon: 'iconjifenshangcheng', url: '/pages/pet/my-fabu', title: '我的发布产品', color: '#ff6b81'},
 		//{ icon: 'iconjifenshangcheng', url: '/pages/marketing/point/point', title: '积分商城', color: '#ff6b81'},
 		{ icon: 'icondizhi1', url: '/pages/user/address/address', title: '地址管理', color: '#ff6b81' },
 		//{ icon: 'iconmimazhongzhi', url: '/pages/user/virtual/index', title: '虚拟码', color: '#ff6b81' },
@@ -77,22 +78,22 @@ export default {
 		//{ icon: 'iconkanjia1', url: '/pages/marketing/bargain/my', title: '我的砍价', color: '#ff6b81' },
 		//{ icon: 'iconshoucang3', url: '/pages/user/collection/collection', title: '我的收藏', color: '#ff6b81' },
 		//{ icon: 'iconfenxiaozhongxin', url: '/pages/distribution/apply', title: '推广中心', color: '#ff6b81' },
-		{ icon: 'iconfenxiang', url: '', title: '分享', color: '#ff6b81' },
+		// { icon: 'iconfenxiang', url: '', title: '分享', color: '#ff6b81' },
 		//{ icon: 'iconzhibo', url: '/pages/marketing/live/list', title: '直播', color: '#ff6b81' },
 		// { icon: 'iconzhibo', url: '/pages/user/live', title: '直播测试', color: '#ff6b81' },
 		//{ icon: 'iconshouhoukefu', url: '/pages/product/service/index', title: '联系客服', color: '#ff6b81' },
-		{ icon: 'iconshezhi3', url: '/pages/set/set', title: '设置', color: '#ff6b81' }
+		{ icon: 'iconshezhi3', url: '/pages/set/set', title: '设置', color: '#ff6b81' },
 	],
 	// 表单 e07472 ff4757 ff6b81
 	formsettingList: [
 		
-		{ icon: 'iconremen1', url: '/pages/pet/my-tuoyunform', title: '宠物托运表单', color: '#ff6b81' },
-		{ icon: 'iconremen1', url: '/pages/pet/my-jiyangform', title: '宠物寄养表单', color: '#ff6b81' },
-		{ icon: 'iconremen1', url: '/pages/pet/my-binzangform', title: '宠物殡葬表单', color: '#ff6b81' },
+		// { icon: 'iconremen1', url: '/pages/pet/my-tuoyunform', title: '宠物托运表单', color: '#ff6b81' },
+		// { icon: 'iconremen1', url: '/pages/pet/my-jiyangform', title: '宠物寄养表单', color: '#ff6b81' },
+		// { icon: 'iconremen1', url: '/pages/pet/my-binzangform', title: '宠物殡葬表单', color: '#ff6b81' },
 	
-		{ icon: 'iconremen1', url: '/pages/pet/my-weiyangform', title: '宠物上门喂养', color: '#ff6b81' },
-		{ icon: 'iconremen1', url: '/pages/pet/my-zhuancheform', title: '宠物同城专车', color: '#ff6b81' },
-			{ icon: 'iconremen1', url: '/pages/pet/my-hezuoform', title: '商家合作表单', color: '#ff6b81' },
+		// { icon: 'iconremen1', url: '/pages/pet/my-weiyangform', title: '宠物上门喂养', color: '#ff6b81' },
+		// { icon: 'iconremen1', url: '/pages/pet/my-zhuancheform', title: '宠物同城专车', color: '#ff6b81' },
+		// 	{ icon: 'iconremen1', url: '/pages/pet/my-hezuoform', title: '商家合作表单', color: '#ff6b81' },
 		
 	],	
 	// 设置-设置中心
